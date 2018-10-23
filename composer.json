@@ -1,6 +1,7 @@
 {
     "name": "roykarte/laravel-sendinblue",
     "description": "Laravel sendinblue connection for API V3",
+    "homepage": "https://github.com/roykarte/laravel-sendinblue",
     "Authors": [
         {
             "name": "Roy Karte",
