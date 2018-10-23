@@ -1,0 +1,18 @@
+{
+    "name": "roykarte/laravel-sendinblue",
+    "description": "Laravel sendinblue connection for API V3",
+    "Authors": [
+        {
+            "name": "Roy Karte",
+            "email": "roy@studio-kk.nl"
+        }
+    ],
+    "require": {
+        "sendinblue/api-v3-sdk": "*"
+	},
+    "autoload": {
+        "psr-4": {
+            "Roykarte\\LaravelSendinBlue\\": "src/"
+        }
+    }
+}
