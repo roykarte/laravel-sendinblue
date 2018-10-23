@@ -51,7 +51,12 @@ class SendinBlueTransport extends Transport
     {
         $data = [];
 
-        $data['sender'] = ['name' => '60plusendus', 'email' => 'info@60plusendus.nl'];
+		$data['sender'] = [];
+        
+		// This is always one!
+		foreach ($message->getFrom() as $email => $name) {
+			$data['sender'] = ['name' => $name, 'email' => $email];
+		}
 
         if ($message->getHeaders()) {
             $headers = $message->getHeaders()->getAll();
@@ -71,13 +76,6 @@ class SendinBlueTransport extends Transport
 
         if ($message->getSubject()) {
             $data['subject'] = $message->getSubject();
-        }
-
-        if ($message->getFrom()) {
-            $from = $message->getFrom();
-            reset($from);
-            $key = key($from);
-            $data['from'] = [$key, $from[$key]];
         }
 
         // set content
